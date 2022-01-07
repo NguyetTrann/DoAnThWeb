@@ -14,7 +14,7 @@
                 <li><a href="#"><i class="fa fa-heart"></i> <span>1</span></a></li>
                 <li><a href="#"><i class="fa fa-shopping-bag"></i> <span>3</span></a></li>
             </ul>
-            <div class="header__cart__price">item: <span>$150.00</span></div>
+            <div class="header__cart__price">item: <span>200.000 VNĐ</span></div>
         </div>
         <div class="humberger__menu__widget">
             <div class="header__top__right__language">
@@ -27,7 +27,7 @@
                 </ul>
             </div>
             <div class="header__top__right__auth">
-                <a href="#"><i class="fa fa-user"></i> Login</a>
+                <a href="login.php"><i class="fa fa-user"></i> Login</a>
             </div>
         </div>
         <nav class="humberger__menu__nav mobile-menu">
@@ -93,7 +93,7 @@
                                 </ul>
                             </div>
                             <div class="header__top__right__auth">
-                                <a href="#"><i class="fa fa-user"></i> Login</a>
+                                <a href="login.php"><i class="fa fa-user"></i> Login</a>
                             </div>
                         </div>
                     </div>
@@ -131,7 +131,7 @@
                             <li><a href="#"><i class="fa fa-heart"></i> <span>1</span></a></li>
                             <li><a href="#"><i class="fa fa-shopping-bag"></i> <span>3</span></a></li>
                         </ul>
-                        <div class="header__cart__price">item: <span>$150.00</span></div>
+                        <div class="header__cart__price"> GIÁ <span>200.000 VNĐ</span></div>
                     </div>
                 </div>
             </div>
@@ -153,15 +153,11 @@
                             <span>Danh mục sản phẩm</span>
                         </div>
                         <ul>
-                            <li><a href="#">Hoa ngày lễ</a></li>
-                            <li><a href="#">Hoa sinh nhật</a></li>
-                            <li><a href="#">Hoa khai trương</a></li>
-                            <li><a href="#">Hoa để bàn</a></li>
-                            <li><a href="#">Hoa tình yêu</a></li>
-                            <li><a href="#">Hoa cưới cầm tay</a></li>
-                            <li><a href="#">Hoa chúc mừng</a></li>
-                            <li><a href="#">Hoa trồng trong nhà</a></li>
-                            <li><a href="#">Khác</a></li>
+                            <li><a href="hoakhaitruong.php">Hoa khai trương</a></li>
+                            <li><a href="hoadeban.php">Hoa để bàn</a></li>
+                            <li><a href="hoacuoi.php">Hoa cưới cầm tay</a></li>
+                            <li><a href="langhoa.php">Lãng hoa</a></li>
+                            <li><a href="hoakhac.php">Khác</a></li>
                         </ul>
                     </div>
                 </div>
@@ -170,8 +166,8 @@
                         <div class="hero__search__form">
                             <form action="#">
                                 
-                                <input type="text" placeholder="What do yo u need?">
-                                <button type="submit" class="site-btn">SEARCH</button>
+                                <input type="text" placeholder="Nhập nội dung bạn cần tìm">
+                                <button type="submit" class="site-btn">Tìm kiếm</button>
                             </form>
                         </div>
                         <div class="hero__search__phone">
