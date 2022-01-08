@@ -1,9 +1,7 @@
 <?php
-include "./controller/autoload.php";
-include "./dao/AdminDAO.php";
-$user= AdminDAO::get1Admin($_GET["ma"],$conn);
-// var_dump($_GET["makh"]);
-// exit();
+include "../controller/autoload.php";
+include "../dao/UserDAO.php";
+$user= UserDAO::get1User($_GET["makh"],$conn);
 ?>
 
 <?php include "layout/desktopsidebar.php"; ?>
@@ -18,24 +16,24 @@ if (!empty($_SESSION['error'])) {
 
 <main class="h-full pb-16 overflow-y-auto">
   <div class="container grid px-6 mx-auto">
-    <h2> <?php echo $loi; ?> </h2>
     <h2 class="my-6 text-2xl font-semibold text-gray-700 dark:text-gray-200">
       Update User
     </h2>
-
     <div class="px-4 py-3 mb-8 bg-white rounded-lg shadow-md dark:bg-gray-800">
-
       <div class="card-body card-block">
-        <form action="./controller/loginadminController.php" method="POST" enctype="multipart/form-data" class="form-horizontal">
+      <div style="color: red; margin-left:45%; margin-bottom:-10px;">
+          <?php echo $loi; ?>
+        </div>
+        <form action="../controller/userController.php" method="POST" enctype="multipart/form-data" class="form-horizontal">
        
           <div class="row form-group">
-            <div class="col col-md-3" style="margin-top: 0.8rem;" hidden><label class=" form-control-label">Mã nhân viên</label></div>
-            <div class="col-12 col-md-9"><input name="ma" class="form-control" type="text"  value="<?php echo $user['ma'] ?>" hidden></div>
+            <div class="col col-md-3" style="margin-top: 0.8rem;" hidden><label class=" form-control-label">Mã khách hàng</label></div>
+            <div class="col-12 col-md-9"><input name="makh" class="form-control" type="text"  value="<?php echo $user['makh'] ?>" hidden></div>
           </div>
 
           <div class="row form-group">
-            <div class="col col-md-3" style="margin-top: 0.8rem;"><label class=" form-control-label">Tên nhân viên</label></div>
-            <div class="col-12 col-md-9"><input type="text" id="text-input" name="username" value="<?php echo $user['username'] ?>" placeholder="điền tên" class="form-control"></div>
+            <div class="col col-md-3" style="margin-top: 0.8rem;"><label class=" form-control-label">Tên khách hàng</label></div>
+            <div class="col-12 col-md-9"><input type="text" id="text-input" name="username" value="<?php echo $user['username'] ?>" placeholder="thêm tên" class="form-control"></div>
           </div>
 
           <div class="row form-group">
@@ -45,12 +43,12 @@ if (!empty($_SESSION['error'])) {
 
           <div class="row form-group">
             <div class="col col-md-3" style="margin-top: 0.8rem;"><label class=" form-control-label">Sđt</label></div>
-            <div class="col-12 col-md-9"><input type="text" id="text-input" name="sdt" value="<?php echo $user['sdt'] ?>" placeholder="điền số điện thoại" class="form-control"></div>
+            <div class="col-12 col-md-9"><input type="text" id="text-input" name="sdt" value="<?php echo $user['sdt'] ?>" placeholder="thêm tên" class="form-control"></div>
           </div>
 
           <div class="row form-group">
             <div class="col col-md-3" style="margin-top: 0.8rem;"><label class=" form-control-label">Password</label></div>
-            <div class="col-12 col-md-9"><input type="text" id="text-input" name="password" value="<?php echo $user['password'] ?>" placeholder="điền password" class="form-control"></div>
+            <div class="col-12 col-md-9"><input type="text" id="text-input" name="password" value="<?php echo $user['password'] ?>" placeholder="thêm tên" class="form-control"></div>
           </div>
 
           <div class="row form-group">

@@ -5,14 +5,15 @@ class SanPham
     private $tensp;
     private $hinh;
     private $gia;
+    private $mota;
 
-
-    public function __construct($ma, $ten, $hinh, $gia)
+    public function __construct($ma, $ten, $hinh, $gia, $mt)
     {
         $this->masp = $ma;
         $this->tensp = $ten;
         $this->hinh = $hinh;
         $this->gia = $gia;
+        $this->mota = $mt;
     }
 
     public function setMaSp($ma){
@@ -21,6 +22,14 @@ class SanPham
 
     public function getMaSp(){
         return $this->masp;
+    }
+
+    public function setMoTa($mt){
+        $this->mota = $mt;
+    }
+
+    public function getMoTa(){
+        return $this->mota;
     }
 
     public function setTenSp($ten){

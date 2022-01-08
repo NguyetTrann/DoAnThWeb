@@ -35,8 +35,9 @@ class AdminDAO
 
     public static function insertAdmin($admin,$conn)
     {
-        $statement = $conn->prepare("insert into admin(username,email,sdt,password,avatar) values(:username,:email,:sdt,:password,:avatar)");
+        $statement = $conn->prepare("insert into admin(username,tenad,email,sdt,password,avatar) values(:username,:tenad,:email,:sdt,:password,:avatar)");
         $statement->bindValue(':email',$admin->get_Email());
+        $statement->bindValue(':tenad',$admin->get_Ten());
         $statement->bindValue(':username',$admin->get_username());
         $statement->bindValue(':password',$admin->get_Password());
         $statement->bindValue(':sdt',$admin->get_Sdt());
@@ -46,8 +47,9 @@ class AdminDAO
 
     public static function insertWithoutAvtAdmin($admin,$conn)
     {
-        $statement = $conn->prepare("insert into admin(username,email,sdt,password) values(:username,:email,:sdt,:password)");
+        $statement = $conn->prepare("insert into admin(username,tenad,email,sdt,password) values(:username,:tenad,:email,:sdt,:password)");
         $statement->bindValue(':email',$admin->get_Email());
+        $statement->bindValue(':tenad',$admin->get_Ten());
         $statement->bindValue(':username',$admin->get_username());
         $statement->bindValue(':password',$admin->get_Password());
         $statement->bindValue(':sdt',$admin->get_Sdt());
@@ -55,10 +57,11 @@ class AdminDAO
     }
 
     public static function updateAdmin($admin,$ma,$conn){
-        $statement = $conn->prepare("update admin set username=:username,email=:email,sdt=:sdt,password=:password,avatar=:avatar where ma=:ma");
+        $statement = $conn->prepare("update admin set username=:username,tenad=:tenad,email=:email,sdt=:sdt,password=:password,avatar=:avatar where ma=:ma");
         $statement->bindValue(':email',$admin->get_Email());
         $statement->bindValue(':username',$admin->get_username());
         $statement->bindValue(':password',$admin->get_Password());
+        $statement->bindValue(':tenad',$admin->get_Ten());
         $statement->bindValue(':sdt',$admin->get_Sdt());
         $statement->bindValue(':avatar',$admin->get_Avatar());
         $statement->bindValue(':ma',$ma);
@@ -66,9 +69,10 @@ class AdminDAO
     }
 
     public static function updateWithoutAdmin($admin,$ma,$conn){
-        $statement = $conn->prepare("update admin set username=:username,email=:email,sdt=:sdt,password=:password where ma=:ma");
+        $statement = $conn->prepare("update admin set username=:username,tenad=:tenad,email=:email,sdt=:sdt,password=:password where ma=:ma");
         $statement->bindValue(':email',$admin->get_Email());
         $statement->bindValue(':username',$admin->get_username());
+        $statement->bindValue(':tenad',$admin->get_Ten());
         $statement->bindValue(':password',$admin->get_Password());
         $statement->bindValue(':sdt',$admin->get_Sdt());
         $statement->bindValue(':ma',$ma);

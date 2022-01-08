@@ -1,6 +1,6 @@
 <?php
-include "./controller/autoload.php";
-include "./dao/UserDAO.php";
+include "../controller/autoload.php";
+include "../dao/UserDAO.php";
 $users = UserDAO::getAllUser($conn);
 ?>
 

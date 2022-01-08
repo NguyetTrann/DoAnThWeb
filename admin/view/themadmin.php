@@ -1,6 +1,6 @@
 <?php
-include "./controller/autoload.php";
-include "./dao/AdminDAO.php";
+include "../controller/autoload.php";
+include "../dao/AdminDAO.php";
 // var_dump($_GET["makh"]);
 // exit();
 ?>

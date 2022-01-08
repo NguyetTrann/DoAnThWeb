@@ -1,6 +1,6 @@
 <?php
-include "./controller/autoload.php";
-include "./dao/AdminDAO.php";
+include "../controller/autoload.php";
+include "../dao/AdminDAO.php";
 $users = AdminDAO::getAllAdmin($conn);
 ?>
 
@@ -21,6 +21,7 @@ $users = AdminDAO::getAllAdmin($conn);
             <tr class="text-xs font-semibold tracking-wide text-left text-gray-500 uppercase border-b dark:border-gray-700 bg-gray-50 dark:text-gray-400 dark:bg-gray-800">
               <th class="px-4 py-3">Nhân viên</th>
               <th class="px-4 py-3">Mã </th>
+              <th class="px-4 py-3">Tên </th>              
               <th class="px-4 py-3">Email</th>
               <th class="px-4 py-3">SĐT</th>
               <th class="px-4 py-3">Password</th>
@@ -41,11 +42,13 @@ $users = AdminDAO::getAllAdmin($conn);
                     <div class="absolute inset-0 rounded-full shadow-inner" aria-hidden="true"></div>
                   </div>
                   <div>
-                    <p class="font-semibold"><?php echo $user['username'] ?></p>
+                    <p class="font-semibold" style="margin-bottom: 1px;"><?php echo $user['username'] ?></p>
                   </div>
                 </div>
               </td>
               <td class="px-4 py-3 text-sm"><?php echo $user['ma'] ?>
+              </td>
+              <td class="px-4 py-3 text-sm"><?php echo $user['tenad'] ?>
               </td>
               <td class="px-4 py-3 text-sm"> <?php echo $user['email'] ?> </td>
               <td class="px-4 py-3 text-sm">

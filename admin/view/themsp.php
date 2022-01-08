@@ -1,7 +1,6 @@
 <?php
-include "./controller/autoload.php";
-include "./dao/ProductDAO.php";
-$product = ProductDAO::getProduct($_GET["masp"], $conn);
+include "../controller/autoload.php";
+include "../dao/ProductDAO.php";
 ?>
 
 <?php include "layout/desktopsidebar.php"; ?>
@@ -24,18 +23,23 @@ if (!empty($_SESSION['error'])) {
     <div class="px-4 py-3 mb-8 bg-white rounded-lg shadow-md dark:bg-gray-800">
 
       <div class="card-body card-block">
-        <form action="./controller/productController.php" method="POST" enctype="multipart/form-data" class="form-horizontal">
+        <form action="../controller/productController.php" method="POST" enctype="multipart/form-data" class="form-horizontal">
           <label hidden style="font-size:20px;margin-top: 15px;margin-bottom: 7px">Mã sản phẩm</label>
-          <input type="text" style="margin-top: 10px; font-size:20px; width: 200px; float:right" name="masp" value="<?php echo $product['masp'] ?>" hidden><br>
+          <input type="text" style="margin-top: 10px; font-size:20px; width: 200px; float:right" name="masp" hidden><br>
 
           <div class="row form-group">
             <div class="col col-md-3" style="margin-top: 0.8rem;"><label class=" form-control-label">Tên sản phẩm</label></div>
-            <div class="col-12 col-md-9"><input type="text" id="text-input" name="tensp" value="<?php echo $product['tensp'] ?>" placeholder="thêm tên" class="form-control"></div>
+            <div class="col-12 col-md-9"><input type="text" id="text-input" name="tensp" placeholder="thêm tên" class="form-control"></div>
           </div>
 
           <div class="row form-group">
             <div class="col col-md-3" style="margin-top: 0.8rem;"><label for="password-input" class=" form-control-label">Giá</label></div>
-            <div class="col-12 col-md-9"><input type="text" id="password-input" name="gia" placeholder="200.000" value="<?php echo $product['gia'] ?>" class="form-control"></div>
+            <div class="col-12 col-md-9"><input type="text" id="password-input" name="gia" placeholder="200.000" class="form-control"></div>
+          </div>
+
+          <div class="row form-group">
+            <div class="col col-md-3" style="margin-top: 0.8rem;"><label for="password-input" class=" form-control-label">Mô tả</label></div>
+            <div class="col-12 col-md-9"><input type="text" id="password-input" name="mota" class="form-control"></div>
           </div>
 
           <div class="row form-group">
@@ -48,8 +52,8 @@ if (!empty($_SESSION['error'])) {
           </div>
 
           <div>
-            <button type="submit" name="action" value="updateSP" class="btn btn-primary btn-sm">
-              <i class="fa fa-dot-circle-o"></i> Update
+            <button type="submit" name="action" value="addsanpham" class="btn btn-primary btn-sm">
+              <i class="fa fa-dot-circle-o"></i> Add
             </button>
             <button type="reset" name="btnReset" class="btn btn-danger btn-sm">
               <i class="fa fa-ban"></i> Reset

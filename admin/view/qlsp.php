@@ -1,6 +1,6 @@
 <?php
-include "./controller/autoload.php";
-include "./dao/ProductDAO.php";
+include "../controller/autoload.php";
+include "../dao/ProductDAO.php";
 $products = ProductDAO::getAllProduct($conn);
 ?>
 

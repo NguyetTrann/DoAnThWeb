@@ -3,15 +3,17 @@
 class Admin
 {
     private $ma;
+    private $ten;
     private $username;
     private $email;
     private $password;
     private $sdt;
     private $avatar;
 
-    public function __construct($ma, $username, $em, $pw, $std, $avt)
+    public function __construct($ma,$ten, $username, $em, $pw, $std, $avt)
     {
         $this->email = $em;
+        $this->ten = $ten;
         $this->ma = $ma;
         $this->password = $pw;
         $this->username = $username;
@@ -26,6 +28,14 @@ class Admin
 
     public function get_Ma(){
         return $this->ma;
+    }
+
+    public function set_Ten($ten){
+        $this->ten=$ten;
+    }
+
+    public function get_Ten(){
+        return $this->ten;
     }
 
     public function set_Email($em){

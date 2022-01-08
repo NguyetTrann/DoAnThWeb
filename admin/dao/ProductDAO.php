@@ -4,19 +4,21 @@ include dirname(__DIR__)."/util/connectDB.php";
 class ProductDAO{
    
     public static function insertProduct($product,$conn){
-        $statement = $conn->prepare("insert into sanpham(tensp,hinh,gia)
-        values(:tensp,:hinh,:gia)");
+        $statement = $conn->prepare("insert into sanpham(tensp,hinh,mota,gia)
+        values(:tensp,:hinh,:mota,:gia)");
         $statement->bindValue(':tensp',$product->getTenSp());
         $statement->bindValue(':hinh',$product->getHinh());
+        $statement->bindValue(':mota',$product->getMoTa());
         $statement->bindValue(':gia',$product->getGia());
         $statement->execute();
     }
 
     public static function updateProduct($product,$masp,$conn){
         $statement = $conn->prepare("update sanpham
-        set tensp=:tensp,hinh=:hinh,gia=:gia where masp=:masp");
+        set tensp=:tensp,hinh=:hinh,mota=:mota,gia=:gia where masp=:masp");
         $statement->bindValue(':tensp',$product->getTenSp());        
         $statement->bindValue(':hinh',$product->getHinh());
+        $statement->bindValue(':mota',$product->getMoTa());
         $statement->bindValue(':gia',$product->getGia());
         $statement->bindValue(':masp',$masp);
         $statement->execute();
@@ -24,8 +26,9 @@ class ProductDAO{
 
     public static function updateProductWithoutImage($product,$masp,$conn){
         $statement = $conn->prepare("update sanpham
-        set tensp=:tensp,hinh=:hinh,gia=:gia where masp=:masp");
-        $statement->bindValue(':tensp',$product->getTenSp());
+        set tensp=:tensp,mota=:mota,gia=:gia where masp=:masp");
+        $statement->bindValue(':tensp',$product->getTenSp());        
+        $statement->bindValue(':mota',$product->getMoTa());
         $statement->bindValue(':gia',$product->getGia());
         $statement->bindValue(':masp',$masp);
         $statement->execute();
